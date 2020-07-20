@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Using The Terminal - Ubuntu Documentation</title>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="shortcut icon" type="image/png" href="../img/favicon.png">
+        <meta name="description" content="How to use the terminal in ubuntu">
+        <meta name="keywords" content="linux, terminal, ubuntu, how to, cli">
+        <meta name="author" content="SilviuB">
+    </head>
+
+    <body>
+        <header>
+            <div>
+                <div class="header">
+                    <img class="ubuntu-logo" src="../img/cof_orange_hex.svg" alt="Ubuntu Logo">
+                    <p class="ubuntu-documentation">
+                        <a href="https://help.ubuntu.com/" alt="link to official ubuntu documentation">ubuntu documentation</a>
+                    </p>
+                </div>
+                <h1>Using The Terminal</h1>
+            </div>
+        </header>
+
+        <div class="container">
+            <nav id="navbar">
+                <header>Contents</header>
+                <ol>
+                    <li>
+                        <a class="nav-link" href="#Why_use_the_terminal?">Why use the terminal?</a>
+                    </li>
+
+                    <li>
+                        <a class="nav-link" href="#Starting_a_terminal">Starting a terminal</a>
+                        <ol>
+                            <li>
+                                <a class="nav-link" href="#In_Unity">In Unity</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#In_GNOME">In GNOME</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#In_Xfce">In Xfce (Xubuntu)</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#In_KDE">In KDE (Kubuntu)</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#In_LXDE">In LXDE (Lubuntu)</a>
+                            </li>
+                        </ol>
+                    </li>
+
+                    <li>
+                        <a class="nav-link" href="#Commands">Commands</a>
+                        <ol>
+                            <li>
+                                <a class="nav-link" href="#sudo_Administrator_Privilege">sudo: Executing Commands with Administrative Privileges</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#File_Directory_Commands">File & Directory Commands</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#Running_a_File_Within_a_Directory">#Running a file within a directory</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#System_Information_Commands">System Information Commands</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#Adding_a_New_User">Adding a New User</a>
+                            </li>
+                        </ol>
+                    </li>
+
+                    <li>
+                        <a class="nav-link" href="#Options">Options</a>
+                    </li>
+
+                    <li>
+                        <a class="nav-link" href="#Man_and_Getting_Help">"Man" and Getting Help</a>
+                        <ol>
+                            <li>
+                                <a class="nav-link" href="#Searching_the_Manual_pages">Searching the Manual Pages</a>
+                            </li>
+                        </ol>
+                    </li>
+
+                    <li>
+                        <a class="nav-link" href="#Other_Useful_Things">Other Useful Things</a>
+                        <ol>
+                            <li>
+                                <a class="nav-link" href="#Prettier_Manual_Pages">Prettier Manual Pages</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#Pasting_in_Commands">Pasting in Commands</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#Save_on_Typing">Save on Typing</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#Change_the_Text">Change the Text</a>
+                            </li>
+                        </ol>
+                    </li>
+
+                    <li>
+                        <a class="nav-link" href="#More_Ways_to_Run_a_Terminal">More Ways to Run a Terminal</a>
+                    </li>
+
+                    <li>
+                        <a class="nav-link" href="#An_Extremely_Handy_Tool">An Extremely Handy Tool :: Incremental History Searching</a>
+                    </li>
+
+                    <li>
+                        <a class="nav-link" href="#Create_Upsidedown_Reverse_Text">How to Create Upsidedown And/Or Reverse Text With Your Terminal</a>
+                    </li>
+
+                    <li>
+                        <a class="nav-link" href="#More_Information">More Information</a>
+                    </li>
+                </ol>
+            </nav>
+
+            <main id="main-doc">
+                <section class="main-section" id="Why_use_the_terminal?">
+                    <header class="hide">Why use the terminal?</header>
+                    <h2>Why use the terminal?</h2>
+                    <p>
+                        "Under Linux there are GUIs (graphical user interfaces), where you can point and click and drag, and hopefully get work done without first reading lots of documentation. The traditional Unix environment is a CLI (command line interface), where you type commands to tell the computer what to do. That is faster and more powerful, but requires finding out what the commands are." 
+                    </p>
+                    <p>-- from <strong>man intro(1)</strong></p>
+                    <p>
+                        This page gives an introduction to using the command-line interface terminal, from now on abbreviated to the <strong>terminal</strong>. There are many varieties of Linux, but almost all of them use similar commands that can be entered from the terminal. 
+                    </p>
+                    <p>
+                        There are also many graphical user interfaces (GUIs), but each of them works differently and there is little standardization between them. Experienced users who work with many different Linux distributions therefore find it easier to learn commands that can be used in all varieties of Ubuntu and, indeed, in other Linux distributions as well. 
+                    </p>
+                    <p>
+                        For the novice, commands can appear daunting: 
+                    </p>
+                    <pre>
+                        <code>
+    sudo gobbledegook blah_blah -w -t -h --long-switch 
+    aWkward/ComBinationOf/mixedCase/underscores_strokes/and.dots
+                        </code>
+                    </pre>
+                    <p>
+                        However, it is important to note that even experienced users often cut and paste commands (from a guide or manual) into the terminal; they do not memorize them. 
+                    </p>
+                    <p>
+                        It is important, of course, to know how to use the terminal - and anyone who can manage typing, backspacing, and cutting and pasting will be able to use the terminal (it is not more difficult than that). 
+                    </p>
+                </section>
+
+                <section class="main-section" id="Starting_a_terminal">
+                    <header class="hide">Starting a terminal</header>
+                    <h2>Starting a terminal</h2>
+
+                    <div class="sub-section" id="In_Unity">
+                        <h3>In Unity</h3>
+                        <p>
+                            Unity is the default desktop environment used as of 11.04. Where systems are not ready for Unity they revert to GNOME which is also used in previous releases such as Ubuntu 10.04 LTS (Lucid), see next sub-section.
+                        </p>
+                        <p>
+                            The easiest way to open the terminal is to use the 'search' function on the dash. Or you can click on the 'More Apps' button, click on the 'See more results' by the installed section, and find it in that list of applications. A third way, available after you click on the 'More Apps' button, is to go to the search bar, and see that the far right end of it says 'All Applications'. You then click on that, and you'll see the full list. Then you can go to Accessories -> Terminal after that. So, the methods in Unity are:
+                        </p>
+                        <p>
+                            <strong>Dash</strong> -> <strong>Search for Terminal</strong>
+                        </p>
+                        <p>
+                            <strong>Dash</strong> -> <strong>More Apps</strong> -> <strong>'See More Results'</strong> -> <strong>Terminal</strong>
+                        </p>
+                        <p>
+                            <strong>Dash</strong> -> <strong>More Apps</strong> -> <strong>Accessories</strong> -> <strong>Terminal</strong>
+                        </p>
+                        <p>
+                            <strong>Keyboard Shortcut:</strong> Ctrl + Alt + T
+                        </p>
+                    </div>
+
+                    <div class="sub-section" id="In_GNOME">
+                        <h3>In GNOME</h3>
+                        <p>
+                            GNOME is the classic desktop environment for Ubuntu 11.04 (Natty) and is the default desktop environment in earlier releases, such as Ubuntu 10.04 LTS (Lucid).
+                        </p>
+                        <p>
+                            <strong>Applications Menu</strong> -> <strong>Accessories</strong> -> <strong>Terminal</strong>
+                        </p>
+                        <p>
+                            <strong>Keyboard Shortcut:</strong> Ctrl + Alt + T
+                        </p>
+                    </div>
+
+                    <div class="sub-section" id="In_Xfce">
+                        <h3>In Xfce (Xubuntu)</h3>
+                        <strong>Application Menu</strong> -> <strong>System</strong> -> <strong>Terminal</strong>
+                        <p>
+                            <strong>Keyboard Shortcut:</strong> Super + T
+                        </p>
+                        <p>
+                            <strong>Keyboard Shortcut:</strong> Ctrl + Alt + T
+                        </p>
+                    </div>
+
+                    <div class="sub-section" id="In_KDE">
+                        <h3>In KDE (Kubuntu)</h3>
+                        <strong>KMenu</strong> -> <strong>System</strong> -> <strong>Terminal Program (Konsole)</strong>
+                    </div>
+
+                    <div class="sub-section" id="In_LXDE">
+                        <h3>In LXDE (Lubuntu)</h3>
+                        <strong>Menu</strong> -> <strong>Accessories</strong> -> <strong>LXTerminal</strong>
+                        <p>
+                            <strong>Keyboard Shortcut:</strong> Ctrl + Alt + T
+                        </p>
+                    </div>
+                </section>
+
+                <section class="main-section" id="Commands">
+                    <header class="hide">Commands</header>
+                    <h2>Commands</h2>
+
+                    <div class="sub-section" id="sudo_Administrator_Privilege">
+                        <h3>sudo: Executing Commands with Administrative Privileges</h3>
+                        <p>
+                            The sudo command executes a command with administrative privileges (root-user administrative level), which is necessary, for example, when working with directories or files not owned by your user account. When using sudo you will be prompted for your password. Only users with administrative privileges are allowed to use sudo.
+                        </p>
+                        <p>
+                            Be careful when executing commands with administrative privileges - you might damage your system! You should <strong>never</strong>> use normal sudo to start graphical applications with administrative privileges. Please see 
+                                <a class="externalInfo" href="https://help.ubuntu.com/community/RootSudo" alt="link for detailed explanation of root sudo">
+                                    RootSudo
+                                </a> 
+                                for more information on using sudo correctly. 
+                        </p>
+                    </div>
+
+                    <div class="sub-section" id="File_Directory_Commands">
+                        <h3>File & Directory Commands</h3>
+
+                        <ol>
+                            <li>
+                                The tilde (~) symbol stands for your home directory. If you are user, then the tilde (~) stands for /home/user
+                            </li>
+                            <li>
+                                <strong>pwd</strong>>: The <strong>pwd</strong>> command will allow you to know in which directory you're located (<strong>pwd</strong>> stands for "print working directory"). Example: <strong>pwd</strong>> in the Desktop directory will show "~/Desktop". Note that the GNOME Terminal also displays this information in the title bar of its window. A useful gnemonic is "present working directory." 
+                            </li>
+                            <li>
+                                <strong>ls</strong>: The <strong>ls</strong> command will show you ('list') the files in your current directory. Used with certain options, you can see sizes of files, when files were made, and permissions of files. Example: <strong>ls ~</strong> will show you the files that are in your home directory. 
+                            </li>
+                            <li>
+                                <strong>cd</strong>: The <strong>cd</strong> command will allow you to change directories. When you open a terminal you will be in your home directory. To move around the file system you will use <strong>cd</strong>. Examples:
+                                <ol>
+                                    <li>
+                                        To navigate into the root directory, use <strong>cd /</strong>
+                                    </li>
+                                    <li>
+                                        To navigate to your home directory, use <strong>cd</strong> or <strong>cd ~</strong>
+                                    </li>
+                                    <li>
+                                        To navigate one directory level, use <strong>cd ..</strong>
+                                    </li>
+                                    <li>
+                                        To navigate to the previous directory (or back), use <strong>cd -</strong>
+                                    </li>
+                                    <li>
+                                        To navigate through multiple levels of directory at once, specify the full directory path that you want to go to. For example, use, <strong>cd /var/www</strong> to go directly to the /www subdirectory of /var/. As another example, <strong>cd ~/Desktop</strong> will move you to the Desktop subdirectory inside your home directory.
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <strong>cp</strong>: The <strong>cp</strong> command will make a copy of a file for you. Example: <strong>cp file foo</strong> will make an exact copy of "file" and name it "foo", but the file "file" will still be there. If you are copying a directory, you must use <strong>cp -r directory foo</strong> (copy recursively). (To understand what "recursively" means, think of it this way: to copy the directory and all its files and subdirectories and all their files and subdirectories of the subdirectories and all their files, and on and on, "recursively"). 
+                            </li>
+                            <li>
+                                <strong>mv</strong>: The <strong>mv</strong> command will move a file to a different location or will rename a file. Examples are as follows: <strong>mv file foo</strong> will rename the file "file" to "foo". <strong>mv foo ~/Desktop</strong> will move the file "foo" to your Desktop directory, but it will not rename it. You must specify a new file name to rename a file.
+                                <ol>
+                                    <li>
+                                        To save on typing, you can substitute '~' in place of the home directory.
+                                    </li>
+                                    <li>
+                                        Note that if you are using <strong>mv</strong> with <strong>sudo</strong> you can use the ~ shortcut, because the terminal expands the ~ to your home directory. However, when you open a root shell with <strong>sudo -i</strong> or <strong>sudo -s</strong>, ~ will refer to the root account's home directory, not your own. 
+                                    </li>
+                                </ol> 
+                            </li>
+                            <li>
+                                <strong>rm</strong>: Use this command to remove or delete a file in your directory.
+                            </li>
+                            <li>
+                                <strong>rmdir</strong>: The <strong>rmdir</strong> command will delete an empty directory. To delete a directory and all of its contents recursively, use <strong>rm -r</strong> instead.
+                            </li>
+                            <li>
+                                <strong>mkdir</strong>: The <strong>mkdir</strong> command will allow you to create directories. Example: <strong>mkdir music</strong> will create a directory called "music".
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="sub-section" id="Running_a_File_Within_a_Directory">
+                        <h3>Running a File Within a Directory</h3>
+
+                        <p>
+                            So you've decided to run a file using the command-line? Well... there's a command for that too!
+                        </p>
+                        <p>
+                            <strong>./</strong>filename.extension
+                        </p>
+                        <p>
+                            After navigating to the file's directory, this command will enable any Ubuntu user to run files compiled via GCC or any other programming language. Although the example above indicates a file name extension, please notice that, differently from some other operating systems, Ubuntu (and other Linux-based systems) do not care about file extensions (they can be anything, or nothing).
+                            <strong>Keep in mind that the 'extension' will vary depending upon the language the source code is written in. Also, it is not possible, for compiled languages (like C and C++) to run the source code directly -- the file must be 
+                                <a class="externalInfo" href="https://help.ubuntu.com/community/CompilingEasyHowTo" alt="link to detailed explanation of compiling in ubuntu">
+                                    compiled
+                                </a> first, which means it will be translated from a human-readable programming language to something the computer can understand.</strong> 
+                            Some possible extensions: ".c" for C source, ".cpp" for C++, ".rb" for Ruby, ".py" for Python, etc. Also, remember that (in the case of interpreted languages like Ruby & Python) 
+                            <strong>you must have a version of that language installed on Ubuntu before trying to run files written with it.</strong>
+                        </p>
+                        <p>
+                            Finally, the file will only be executed if the file permissions are correct -- please see the 
+                                <a class="externalInfo" href="https://help.ubuntu.com/community/FilePermissions" alt="link to detailed explanation of file permissions">
+                                    FilePermissions
+                                </a>
+                            help page for details.
+                        </p>
+                    </div>
+
+                    <div class="sub-section" id="System_Information_Commands">
+                        <h3>System information Commands</h3>
+
+                        <p>
+                            <strong>df</strong>: The <strong>df</strong> command displays filesystem disk space usage for all mounted partitions. <strong>df -h</strong> is probably the most useful - it uses megabytes (M) and gigabytes (G) instead of blocks to report. (<strong>-h</strong> means "human-readable") 
+                        </p>
+                        <p>
+                            <strong>du</strong>: The <strong>du</strong> command displays the disk usage for a directory. It can either display the space used for all subdirectories or the total for the directory you run it on. Example:
+                        </p>
+                        <pre>
+                            <code>
+    user@users-desktop:~$ du /media/floppy
+    1032    /media/floppy/files
+    1036    /media/floppy/
+    user@users-desktop:~$ du -sh /media/floppy
+    1.1M    /media/floppy/
+                            </code>
+                        </pre>
+                        <p>
+                            In the above example <strong>-s</strong>> means "Summary" and <strong>-h</strong>> means "Human Readable".
+                        </p>
+                        <p>
+                            <strong>free</strong>: The <strong>free</strong> command displays the amount of free and used memory in the system. <strong>free -m</strong> will give the information using megabytes, which is probably most useful for current computers.
+                        </p>
+                        <p>
+                            <strong>top</strong>: The <strong>top</strong> ('table of processes') command displays information on your Linux system, running processes and system resources, including CPU, RAM & swap usage and total number of tasks being run. To exit <strong>top</strong>, press <strong>q</strong>.
+                        </p>
+                        <p>
+                            <strong>uname -a</strong>: The <strong>uname</strong> command with the <strong>-a</strong> option prints all system information, including machine name, kernel name & version, and a few other details. Most useful for checking which kernel you're using.
+                        </p>
+                        <p>
+                            <strong>lsb_release -a</strong>: The <strong>lsb_release -a</strong> command with the <strong>-a</strong> option prints version information for the Linux release you're running, for example:
+                        </p>
+                        <pre>
+                            <code>
+    user@computer:~$ lsb_release -a
+    No LSB modules are available.
+    Distributor ID: Ubuntu
+    Description:    Ubuntu 11.10
+    Release:        11.10
+    Codename:       oneiric
+                            </code>
+                        </pre>
+                        <p>
+                            <strong>ip addr</strong> reports on your system's network interfaces. 
+                        </p>
+                    </div>
+
+                    <div class="sub-section" id="Adding_a_New_User">
+                        <h3>Adding a new User</h3>
+
+                        <p>
+                            The <strong>adduser newuser</strong> command will create a new general user called "newuser" on your system, and to assign a password for the newuser account use <strong>passwd newuser</strong>.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="main-section" id="Options">
+                    <header class="hide">Options</header>
+                    <h2>Options</h2>
+
+                    <p>
+                        The default behaviour for a command may usually be modified by adding a <strong>--option</strong> to the command. The <strong>ls</strong> command for example has an <strong>-s</strong> option so that <strong>ls -s</strong> will include file sizes in the listing. There is also a <strong>-h</strong> option to get those sizes in a "human readable" format.
+                    </p>
+                    <p>
+                        Options can be grouped in clusters so <strong>ls -sh</strong> is exactly the same command as <strong>ls -s -h</strong>. Most options have a long version, prefixed with two dashes instead of one, so even <strong>ls --size --hunam-readable</strong> is the same command. 
+                    </p>
+                </section>
+
+                <section class="main-section" id="Man_and_Getting_Help">
+                    <header class="hide">"Man" and Getting Help</header>
+                    <h2>"Man" and Getting Help</h2>
+
+                    <p>
+                        <strong>man command, info command</strong> and <strong>command --help</strong> are the most important tools at the command line.
+                    </p>
+                    <p>
+                        Nearly every command and application in Linux will have a man (manual) file, so finding them is as simple as typing <strong>man "command"</strong>> to bring up a longer manual entry for the specified command. For example, <strong>man mv</strong>> will bring up the <strong>mv</strong> (move) manual. 
+                    </p>
+                    <p>
+                        Move up and down the man file with the arrow keys, and quit back to the command prompt with <strong>q</strong>. 
+                    </p>
+                    <p>
+                        <strong>man man</strong> will bring up the manual entry for the man command, which is a good place to start!
+                    </p>
+                    <p>
+                        <strong>man intro</strong> is especially useful - it displays the "Introduction to user commands" which is a well-written, fairly brief introduction to the Linux command line.
+                    </p>
+                    <p>
+                        There are also <strong>info</strong> pages, which are generally more in-depth than <strong>man</strong> pages. Try <strong>info info</strong> for the introduction to info pages.
+                    </p>
+                    <p>
+                        Some software developers prefer <strong>info</strong> to <strong>man</strong> (for instance, GNU developers), so if you find a very widely used command or app that doesn't have a <strong>man</strong> page, it's worth checking for an <strong>info</strong> page. 
+                    </p>
+                    <p>
+                        Virtually all commands understand the <strong>-h</strong> (or <strong>--help</strong>) option which will produce a short usage description of the command and it's options, then exit back to the command prompt. Try <strong>man -h</strong> or <strong>man --help</strong> to see this in action. 
+                    </p>
+                    <p>
+                        Caveat: It's possible (but rare) that a program doesn't understand the -h option to mean help. For this reason, check for a <strong>man</strong> or <strong>info</strong> page first, and try the long option <strong>--help</strong> before <strong>-h</strong>.
+                    </p>
+
+                    <div class="sub-section" id="Searching_the_Manual_pages">
+                        <h3>Searching the Manual Pages</h3>
+
+                        <p>
+                            If you aren't sure which command or application you need to use, you can try searching the manual pages. Each manual page has a name and a short description.
+                        </p>
+                        <p>
+                            To search the names for <string> enter:
+                        </p>
+                        <pre>
+                            <code>
+    whatis -r <string></string>
+                            </code>
+                        </pre>
+                        <p>
+                            For example, <strong>whatis -r cpy</strong> will list manual pages whose names contain <strong>cpy</strong>. The output from whatis -r cpy will in part depend on your system - but might be as follows:
+                        </p>
+                        <pre>
+                            <code>
+    memccpy (3)          - copy memory area
+    memcpy (3)           - copy memory area
+    mempcpy (3)          - copy memory area
+    [some lines removed]
+    wcsncpy (3)          - copy a fixed-size string of wide characters
+    wmemcpy (3)          - copy an array of wide-characters
+    wmempcpy (3)         - copy memory area
+                            </code>
+                        </pre>
+                        <p>
+                            To search the names or descriptions for <string> enter:
+                        </p>
+                        <pre>
+                            <code>
+    apropos -r <string></string>
+                            </code>
+                        </pre>
+                        <p>
+                            For example, apropos -r "copy files" will list manual pages whose names or descriptions contain <strong>copy files</strong>. The output from apropos -r "copy files" will in part depend on your system - but might be as follows: 
+                        </p>
+                        <pre>
+                            <code>
+    cp (1)          - copy files and directories
+    cpio (1)        - copy files to and from archives
+    gvfs-copy (1)   - Copy files
+    gvfs-move (1)   - Copy files
+    install (1)     - copy files and set attributes
+                            </code>
+                        </pre>
+                    </div>
+                </section>
+
+                <section class="main-section" id="Other_Useful_Things">
+                    <header class="hide">Other Useful Things</header>
+                    <h2>Other Useful Things</h2>
+
+                    <div class="sub-section" id="Prettier_Manual_Pages">
+                        <h3>Prettier Manual Pages</h3>
+
+                        <p>
+                            Users who have Konqueror installed will be pleased to find they can read and search man pages in a web browser context, prettified with their chosen desktop fonts and a little colour, by visiting <strong>man:/command</strong> in Konqueror's address bar. Some people might find this lightens the load if there's lots of documentation to read/search.
+                        </p>
+                    </div>
+
+                    <div class="sub-section" id="Pasting_in_Commands">
+                        <h3>Pasting in Commands</h3>
+
+                        <p>
+                            Often, you will be referred to instructions that require commands to be pasted into the terminal. You might be wondering why the text you've copied from a web page using <strong>Ctrl + C</strong> won't paste in with <strong>Ctrl + V</strong>. Surely you don't have to type in all those nasty commands and filenames? Relax. <strong>Ctrl + Shift + V</strong> pastes into a GNOME terminal; you can also do middle button click on your mouse (both buttons simultaneously on a two-button mouse) or right click and select Paste from the menu. However, if you want to avoid the mouse and yet paste it, use "Shift + Insert", to paste the command. If you have to copy it from another terminal / webpage, you can use "Ctrl + Insert" to copy.
+                        </p>
+                    </div>
+
+                    <div class="sub-section" id="Save_on_Typing">
+                        <h3>Save on Typing</h3>
+
+                        <table>
+                            <tr>
+                                <td><strong>Up Arrow</strong> or <strong>Ctrl + P</strong></td>
+                                <td>Scrolls through the commands you've entered previously.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Down Arrow</strong> or <strong>Ctrl + N</strong></td>
+                                <td>Takes you back to a more recent command.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Enter</strong></td>
+                                <td>When you have the command you want.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>tab</strong></td>
+                                <td>A very useful feature. It autocompletes any commands or filenames, if there's only one option, or else gives you a list of options.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ctrl + R</strong></td>
+                                <td>Searches for commands you've already typed. When you have entered a very long, complex command and need to repeat it, using this key combination and then typing a portion of the command will search through your command history. When you find it, simply press <strong>Enter</strong>.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>History</strong></td>
+                                <td>The <strong>history</strong> command shows a very long list of commands that you have typed. Each command is displayed next to a number. You can type <strong>!x</strong> to execute a previously typed command from the list (replace the X with a number). If your <strong>history</strong> output is too long, then use <strong>history | less</strong> for a scrollable list.</td>
+                            </tr>
+                        </table>
+
+                        <p>
+                            Example: you ran <strong>history</strong> and found you want to use command 1967. Simply enter:
+                        </p>
+                        <pre>
+                            <code>
+    !1967
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="sub-section" id="Change_the_Text">
+                        <h3>Change the Text</h3>
+
+                        <p>
+                            The mouse won't work. Use the left/right arrow keys to move around the line.
+                        </p>
+                        <p>
+                            When the cursor is where you want it in the line, typing inserts text - ie it doesn't overtype what's already there.
+                        </p>
+                        <table>
+                            <tr>
+                                <td><strong>Ctrl + A</strong> or <strong>Home</strong></td>
+                                <td>Moves the cursor to the start of a line.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ctrl + E</strong> or <strong>End</strong></td>
+                                <td>Moves the cursor to the <strong>e</strong>nd of a line</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Esc + B</strong></td>
+                                <td>Moves to the <strong>b</strong>eginning of the previous or current word.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ctrl + K</strong></td>
+                                <td>Deletes from the current cursor position to the end of the line.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ctrl + U</strong></td>
+                                <td>Deletes from the start of the line to the current cursor position.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ctrl + W</strong></td>
+                                <td>Deletes the <strong>w</strong>ord before the cursor.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Alt + B</strong></td>
+                                <td>Goes <strong>b</strong>ack one word at a time.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Alt + F</strong></td>
+                                <td>Moves <strong>f</strong>orward one word at a time.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Alt + C</strong></td>
+                                <td><strong>C</strong>apitalizes letter where cursor is and moves to end of word.</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="sub-section" id="More_Ways_to_Run_a_Terminal">
+                        <h3>More Ways to Run a Terminal</h3>
+
+                        <p>
+                            You can set your own keyboard shortcut to run a terminal. See 
+                            <a class="externalInfo" href="https://help.ubuntu.com/community/KeyboardShortcuts" alt="link to useful keyboard shortcuts in ubuntu">KeyboardShortcuts</a> 
+                            for details of keyboard shortcuts.
+                        </p>
+                        <p>
+                            You can run more than terminal - in tabs or separate windows.
+                        </p>
+                        <p>
+                            You can also install guake (GNOME), tilda (XFCE / LXDE/Mate) or yakuake (KDE) and have a terminal which appears and hides on shortcut key. This can be particularly useful if you use terminal a lot. Drop down terminals can make things a lot easier if you are trying to run a desktop enviroment with a non defualt window manager and something goes wrong drop down terminals can run the orginal window manager --replace to restore a previous option to make things much less painful.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="main-section" id="An_Extremely_Handy_Tool">
+                    <header class="hide">An Extremely Handy Tool :: Incremental History Searching</header>
+                    <h3>An Extremely Handy Tool :: Incremental History Searching</h3>
+
+                    <p>
+                        In terminal enter:
+                    </p>
+                    <pre>
+                        <code>
+    gedit  ~/.inputrc
+                        </code>
+                    </pre>
+                    <p>
+                        Then copy paste and save:
+                    </p>
+                    <pre>
+                        <code>
+    "\e[A": history-search-backward
+    "\e[B": history-search-forward
+    "\e[C": forward-char
+    "\e[D": backward-char
+                        </code>
+                    </pre>
+                    <p>
+                        From now on, <strong>and many agree this is the most useful terminal tool</strong>, it saves you a lot of writing/memorizing.
+                    </p>
+                    <p>
+                        All you need to do to find a previous command is to enter say the first two or three letters and upward arrow will take you there quickly:
+                    </p>
+                    <p>
+                        Say you want:
+                    </p>
+                    <pre>
+                        <code>
+    for f in *.mid ; do timidity "$f"; done
+                        </code>
+                    </pre>
+                    <p>
+                        All you need to do is enter:
+                    </p>
+                    <pre>
+                        <code>
+    fo
+                        </code>
+                    </pre>
+                    <p>
+                        And hit upward arrow command will soon appear. 
+                    </p>
+                </section>
+
+                <section class="main-section" id="Create_Upsidedown_Reverse_Text">
+                    <header class="hide">How to Create Upsidedown And/Or Reverse Text with your Terminal</header>
+                    <h3>How to Create Upsidedown And/Or Reverse Text with your Terminal</h3>
+
+                    <p>
+                        If you wish or need to ever flip text upside down [vertical flip] "uʍop ǝpısdn ʇxǝʇ dıʃɟ" or/and create reverse text here is a terminal way to achieve this.
+                    </p>
+                    <p>
+                        Copy/paste and save the following as flip.pl in your home folder (thanks to Lars Noodén for script).
+                    </p>
+                    <pre>
+                        <code>
+    #!/usr/bin
+    use strict;
+    use warnings;
+    use 
+    binmode(STDOUT, ":ut
+    my %flipTable = (
+        "a" => "\x{0250}",
+        "b" => "q",
+        "c" => "\x{0254}", 
+        "d" => "p",
+        "e" => "\x{01DD}",
+        "f" => "\x{025F}", 
+        "g" => "\x{0183}",
+        "h" => "\x{0265}",
+        "i" => "\x{0131}", 
+        "j" => "\x{027E}",
+        "k" => "\x{029E}",
+        "l" => "|",
+        "m" => "\x{026F}",
+        "n" => "u",
+        "o" => "o",
+        "p" => "d",
+        "q" => "b",
+        "r" => "\x{0279}",
+        "s" => "s",
+        "t" => "\x{0287}",
+        "u" => "n",
+        "v" => "\x{028C}",
+        "w" => "\x{028D}",
+        "x" => "x",
+        "y" => "\x{028E}",
+        "z" => "z",
+        "A" => "\x{0250}",
+        "B" => "q",
+        "C" => "\x{0254}", 
+        "D" => "p",
+        "E" => "\x{01DD}",
+        "F" => "\x{025F}", 
+        "G" => "\x{0183}",
+        "H" => "\x{0265}",
+        "I" => "\x{0131}", 
+        "J" => "\x{027E}",
+        "K" => "\x{029E}",
+        "L" => "|",
+        "M" => "\x{026F}",
+        "N" => "u",
+        "O" => "o",
+        "P" => "d",
+        "Q" => "b",
+        "R" => "\x{0279}",
+        "S" => "s",
+        "T" => "\x{0287}",
+        "U" => "n",
+        "V" => "\x{028C}",
+        "W" => "\x{028D}",
+        "X" => "x",
+        "Y" => "\x{028E}",
+        "Z" => "z",
+        "." => "\x{02D9}",
+        "[" => "]",
+        "'" => ",",
+        "," => "'",
+        "(" => ")",
+        "{" => "}",
+        "?" => "\x{00BF}", 
+        "!" => "\x{00A1}",
+        "\"" => ",",
+        "<" => ">",
+        "_" => "\x{203E}",
+        ";" => "\x{061B}",
+        "\x{203F}" => "\x{2040}",
+        "\x{2045}" => "\x{2046}",
+        "\x{2234}" => "\x{2235}",
+        "\r" => "\n",
+        " " => " "
+    
+    while ( <> ) {
+        my $string = reverse( $_ );
+        while ($string =~ /(.)/g) {
+            print $flipTable{$1};
+        }
+        print qq(\n);
+    }
+                        </code>
+                    </pre>
+                    <p>
+                        Then to set it up:
+                    </p>
+                    <pre>
+                        <code>
+    sudo mv flip.pl /bin/
+    cd /bin/
+    sudo chown yourusername flip.pl && sudo chmod +x flip.pl
+                        </code>
+                    </pre>
+                    <p>
+                        Then open a terminal and enter:
+                    </p>
+                    <pre>
+                        <code>
+    flip.pl
+                        </code>
+                    </pre>
+                    <p>
+                        else
+                    </p>
+                    <pre>
+                        <code>
+    perl /bin/flip.pl
+                        </code>
+                    </pre>
+                    <p>
+                        Write what you want and hit return.
+                    </p>
+                    <p>
+                        Copy and paste wherever you want text document or Internet forum, etc...
+                    </p>
+                    <p>
+                        ɹǝʇuǝ puɐ ʇuɐʍ noʎ ʇɐɥʍ ǝʇıɹʍ ˙˙˙ɔʇǝ ɯnɹoɟ ʇǝuɹǝʇuı ɹo ʇuǝɯnɔop ʇxǝʇ ʇuɐʍ noʎ ɹǝʌǝɹǝɥʍ ǝʇsɐd puɐ ʎdoɔ
+                    </p>
+                    <p>
+                        If you want to reverse back to front, write your text in a text editor and save as mytext to the home folder.
+                    </p>
+                    <p>
+                        Then enter:
+                    </p>
+                    <pre>
+                        <code>
+    rev mytext
+                        </code>
+                    </pre>
+                    <p>
+                        Copy and paste the result, tluser eht etsap dna ypoc.
+                    </p>
+                    <p>
+                        And of course you can combine both for truly cryptic results, ɔodʎ ɐup dɐsʇǝ ʇɥǝ ɹǝsnʃʇ
+                    </p>
+                </section>
+
+                <section class="main-section" id="More_Information">
+                    <header class="hide">More Information</header>
+                    <h3>More Information</h3>
+                
+                    <p>
+                        If you would like to 
+                        <a class="externalInfo#" href="https://help.ubuntu.com/" alt="link to ubuntu official documentation">
+                        learn all there is to know
+                        </a>
+                        about ubuntu, check you the official documentation!
+                    </p>
+                    <p>
+                        There is also a
+                        <a class="externalInfo" href="https://help.ubuntu.com/community/CommunityHelpWiki" alt="link to ubuntu community wiki">
+                        user-created and maintained wiki
+                        </a>
+                        where you can read various tips and tricks.
+                    </p>
+                </section>
+            </main>
+        </div>
+
+        <footer>
+            <p>
+                This page would not have been possible without the excelent
+                <a class="externalInfo" href="https://help.ubuntu.com/community/UsingTheTerminal#An_extremely_handy_tool_::_Incremental_history_searching" alt="link to community terminal wiki">
+                material from the Ubuntu Community Wiki.
+                </a>
+            </p>
+            <p>
+                All rights to the original writers of the Wiki.
+            </p>
+        </footer>
+    </body>
+</html>

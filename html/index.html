@@ -19,7 +19,7 @@
                 <div class="header">
                     <img class="ubuntu-logo" src="../img/cof_orange_hex.svg" alt="Ubuntu Logo">
                     <p class="ubuntu-documentation">
-                        <a href="https://help.ubuntu.com/" alt="link to official ubuntu documentation">ubuntu documentation</a>
+                        <a class="externalInfo" href="https://help.ubuntu.com/" alt="link to official ubuntu documentation">ubuntu documentation</a>
                     </p>
                 </div>
                 <h1>Using The Terminal</h1>
@@ -31,11 +31,11 @@
                 <header>Contents</header>
                 <ol>
                     <li>
-                        <a class="nav-link" href="#Why_use_the_terminal?">Why use the terminal?</a>
+                        <a class="nav-link main" href="#Why_use_the_terminal?">Why use the terminal?</a>
                     </li>
 
                     <li>
-                        <a class="nav-link" href="#Starting_a_terminal">Starting a terminal</a>
+                        <a class="nav-link main" href="#Starting_a_terminal">Starting a terminal</a>
                         <ol>
                             <li>
                                 <a class="nav-link" href="#In_Unity">In Unity</a>
@@ -56,7 +56,7 @@
                     </li>
 
                     <li>
-                        <a class="nav-link" href="#Commands">Commands</a>
+                        <a class="nav-link main" href="#Commands">Commands</a>
                         <ol>
                             <li>
                                 <a class="nav-link" href="#sudo_Administrator_Privilege">sudo: Executing Commands with Administrative Privileges</a>
@@ -77,11 +77,11 @@
                     </li>
 
                     <li>
-                        <a class="nav-link" href="#Options">Options</a>
+                        <a class="nav-link main" href="#Options">Options</a>
                     </li>
 
                     <li>
-                        <a class="nav-link" href="#Man_and_Getting_Help">"Man" and Getting Help</a>
+                        <a class="nav-link main" href="#Man_and_Getting_Help">"Man" and Getting Help</a>
                         <ol>
                             <li>
                                 <a class="nav-link" href="#Searching_the_Manual_pages">Searching the Manual Pages</a>
@@ -90,7 +90,7 @@
                     </li>
 
                     <li>
-                        <a class="nav-link" href="#Other_Useful_Things">Other Useful Things</a>
+                        <a class="nav-link main" href="#Other_Useful_Things">Other Useful Things</a>
                         <ol>
                             <li>
                                 <a class="nav-link" href="#Prettier_Manual_Pages">Prettier Manual Pages</a>
@@ -108,19 +108,19 @@
                     </li>
 
                     <li>
-                        <a class="nav-link" href="#More_Ways_to_Run_a_Terminal">More Ways to Run a Terminal</a>
+                        <a class="nav-link main" href="#More_Ways_to_Run_a_Terminal">More Ways to Run a Terminal</a>
                     </li>
 
                     <li>
-                        <a class="nav-link" href="#An_Extremely_Handy_Tool">An Extremely Handy Tool :: Incremental History Searching</a>
+                        <a class="nav-link main" href="#An_Extremely_Handy_Tool">An Extremely Handy Tool :: Incremental History Searching</a>
                     </li>
 
                     <li>
-                        <a class="nav-link" href="#Create_Upsidedown_Reverse_Text">How to Create Upsidedown And/Or Reverse Text With Your Terminal</a>
+                        <a class="nav-link main" href="#Create_Upsidedown_Reverse_Text">How to Create Upsidedown And/Or Reverse Text With Your Terminal</a>
                     </li>
 
                     <li>
-                        <a class="nav-link" href="#More_Information">More Information</a>
+                        <a class="nav-link main" href="#More_Information">More Information</a>
                     </li>
                 </ol>
             </nav>
@@ -132,7 +132,7 @@
                     <p>
                         "Under Linux there are GUIs (graphical user interfaces), where you can point and click and drag, and hopefully get work done without first reading lots of documentation. The traditional Unix environment is a CLI (command line interface), where you type commands to tell the computer what to do. That is faster and more powerful, but requires finding out what the commands are." 
                     </p>
-                    <p>-- from <strong>man intro(1)</strong></p>
+                    <p class="citation">-- from <strong>man intro(1)</strong></p>
                     <p>
                         This page gives an introduction to using the command-line interface terminal, from now on abbreviated to the <strong>terminal</strong>. There are many varieties of Linux, but almost all of them use similar commands that can be entered from the terminal. 
                     </p>
@@ -145,8 +145,7 @@
                     <pre>
                         <code>
     sudo gobbledegook blah_blah -w -t -h --long-switch 
-    aWkward/ComBinationOf/mixedCase/underscores_strokes/and.dots
-                        </code>
+    aWkward/ComBinationOf/mixedCase/underscores_strokes/and.dots</code>
                     </pre>
                     <p>
                         However, it is important to note that even experienced users often cut and paste commands (from a guide or manual) into the terminal; they do not memorize them. 
@@ -197,7 +196,9 @@
 
                     <div class="sub-section" id="In_Xfce">
                         <h3>In Xfce (Xubuntu)</h3>
-                        <strong>Application Menu</strong> -> <strong>System</strong> -> <strong>Terminal</strong>
+                        <p>
+                            <strong>Application Menu</strong> -> <strong>System</strong> -> <strong>Terminal</strong>
+                        </p>
                         <p>
                             <strong>Keyboard Shortcut:</strong> Super + T
                         </p>
@@ -208,12 +209,16 @@
 
                     <div class="sub-section" id="In_KDE">
                         <h3>In KDE (Kubuntu)</h3>
-                        <strong>KMenu</strong> -> <strong>System</strong> -> <strong>Terminal Program (Konsole)</strong>
+                        <p>
+                            <strong>KMenu</strong> -> <strong>System</strong> -> <strong>Terminal Program (Konsole)</strong>
+                        </p>
                     </div>
 
                     <div class="sub-section" id="In_LXDE">
                         <h3>In LXDE (Lubuntu)</h3>
-                        <strong>Menu</strong> -> <strong>Accessories</strong> -> <strong>LXTerminal</strong>
+                        <p>
+                            <strong>Menu</strong> -> <strong>Accessories</strong> -> <strong>LXTerminal</strong>
+                        </p>
                         <p>
                             <strong>Keyboard Shortcut:</strong> Ctrl + Alt + T
                         </p>
@@ -241,7 +246,7 @@
                     <div class="sub-section" id="File_Directory_Commands">
                         <h3>File & Directory Commands</h3>
 
-                        <ol>
+                        <ol class="fileCommands">
                             <li>
                                 The tilde (~) symbol stands for your home directory. If you are user, then the tilde (~) stands for /home/user
                             </li>
@@ -253,7 +258,7 @@
                             </li>
                             <li>
                                 <strong>cd</strong>: The <strong>cd</strong> command will allow you to change directories. When you open a terminal you will be in your home directory. To move around the file system you will use <strong>cd</strong>. Examples:
-                                <ol>
+                                <ol class="fileCommandsInterior">
                                     <li>
                                         To navigate into the root directory, use <strong>cd /</strong>
                                     </li>
@@ -276,7 +281,7 @@
                             </li>
                             <li>
                                 <strong>mv</strong>: The <strong>mv</strong> command will move a file to a different location or will rename a file. Examples are as follows: <strong>mv file foo</strong> will rename the file "file" to "foo". <strong>mv foo ~/Desktop</strong> will move the file "foo" to your Desktop directory, but it will not rename it. You must specify a new file name to rename a file.
-                                <ol>
+                                <ol class="fileCommandsInterior">
                                     <li>
                                         To save on typing, you can substitute '~' in place of the home directory.
                                     </li>
@@ -339,8 +344,7 @@
     1032    /media/floppy/files
     1036    /media/floppy/
     user@users-desktop:~$ du -sh /media/floppy
-    1.1M    /media/floppy/
-                            </code>
+    1.1M    /media/floppy/</code>
                         </pre>
                         <p>
                             In the above example <strong>-s</strong>> means "Summary" and <strong>-h</strong>> means "Human Readable".
@@ -364,8 +368,7 @@
     Distributor ID: Ubuntu
     Description:    Ubuntu 11.10
     Release:        11.10
-    Codename:       oneiric
-                            </code>
+    Codename:       oneiric</code>
                         </pre>
                         <p>
                             <strong>ip addr</strong> reports on your system's network interfaces. 
@@ -436,8 +439,7 @@
                         </p>
                         <pre>
                             <code>
-    whatis -r <string></string>
-                            </code>
+    whatis -r</code>
                         </pre>
                         <p>
                             For example, <strong>whatis -r cpy</strong> will list manual pages whose names contain <strong>cpy</strong>. The output from whatis -r cpy will in part depend on your system - but might be as follows:
@@ -450,16 +452,14 @@
     [some lines removed]
     wcsncpy (3)          - copy a fixed-size string of wide characters
     wmemcpy (3)          - copy an array of wide-characters
-    wmempcpy (3)         - copy memory area
-                            </code>
+    wmempcpy (3)         - copy memory area</code>
                         </pre>
                         <p>
                             To search the names or descriptions for <string> enter:
                         </p>
                         <pre>
                             <code>
-    apropos -r <string></string>
-                            </code>
+    apropos -r</code>
                         </pre>
                         <p>
                             For example, apropos -r "copy files" will list manual pages whose names or descriptions contain <strong>copy files</strong>. The output from apropos -r "copy files" will in part depend on your system - but might be as follows: 
@@ -470,8 +470,7 @@
     cpio (1)        - copy files to and from archives
     gvfs-copy (1)   - Copy files
     gvfs-move (1)   - Copy files
-    install (1)     - copy files and set attributes
-                            </code>
+    install (1)     - copy files and set attributes</code>
                         </pre>
                     </div>
                 </section>
@@ -531,8 +530,7 @@
                         </p>
                         <pre>
                             <code>
-    !1967
-                            </code>
+    !1967</code>
                         </pre>
                     </div>
 
@@ -611,8 +609,7 @@
                     </p>
                     <pre>
                         <code>
-    gedit  ~/.inputrc
-                        </code>
+    gedit  ~/.inputrc</code>
                     </pre>
                     <p>
                         Then copy paste and save:
@@ -622,8 +619,7 @@
     "\e[A": history-search-backward
     "\e[B": history-search-forward
     "\e[C": forward-char
-    "\e[D": backward-char
-                        </code>
+    "\e[D": backward-char</code>
                     </pre>
                     <p>
                         From now on, <strong>and many agree this is the most useful terminal tool</strong>, it saves you a lot of writing/memorizing.
@@ -636,16 +632,14 @@
                     </p>
                     <pre>
                         <code>
-    for f in *.mid ; do timidity "$f"; done
-                        </code>
+    for f in *.mid ; do timidity "$f"; done</code>
                     </pre>
                     <p>
                         All you need to do is enter:
                     </p>
                     <pre>
                         <code>
-    fo
-                        </code>
+    fo</code>
                     </pre>
                     <p>
                         And hit upward arrow command will soon appear. 
@@ -746,8 +740,7 @@
             print $flipTable{$1};
         }
         print qq(\n);
-    }
-                        </code>
+    }</code>
                     </pre>
                     <p>
                         Then to set it up:
@@ -756,24 +749,21 @@
                         <code>
     sudo mv flip.pl /bin/
     cd /bin/
-    sudo chown yourusername flip.pl && sudo chmod +x flip.pl
-                        </code>
+    sudo chown yourusername flip.pl && sudo chmod +x flip.pl</code>
                     </pre>
                     <p>
                         Then open a terminal and enter:
                     </p>
                     <pre>
                         <code>
-    flip.pl
-                        </code>
+    flip.pl</code>
                     </pre>
                     <p>
                         else
                     </p>
                     <pre>
                         <code>
-    perl /bin/flip.pl
-                        </code>
+    perl /bin/flip.pl</code>
                     </pre>
                     <p>
                         Write what you want and hit return.
@@ -792,8 +782,7 @@
                     </p>
                     <pre>
                         <code>
-    rev mytext
-                        </code>
+    rev mytext</code>
                     </pre>
                     <p>
                         Copy and paste the result, tluser eht etsap dna ypoc.
@@ -809,7 +798,7 @@
                 
                     <p>
                         If you would like to 
-                        <a class="externalInfo#" href="https://help.ubuntu.com/" alt="link to ubuntu official documentation">
+                        <a class="externalInfo" href="https://help.ubuntu.com/" alt="link to ubuntu official documentation">
                         learn all there is to know
                         </a>
                         about ubuntu, check you the official documentation!
@@ -827,9 +816,9 @@
 
         <footer>
             <p>
-                This page would not have been possible without the excelent
+                This page would not have been possible without the
                 <a class="externalInfo" href="https://help.ubuntu.com/community/UsingTheTerminal#An_extremely_handy_tool_::_Incremental_history_searching" alt="link to community terminal wiki">
-                material from the Ubuntu Community Wiki.
+                excellent material from the Ubuntu Community Wiki.
                 </a>
             </p>
             <p>

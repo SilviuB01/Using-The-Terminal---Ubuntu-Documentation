@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Ubuntu', 'Arial', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+.ubuntu-logo {
+    width: 7rem;
+    height: 7rem;
+}
+
+.ubuntu-documentation {
+    font-size: 2rem;
+}
+
+.externalInfo {
+    text-decoration: none;
+    color: #e95420;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+h1 {
+    text-align: center;
+    font-size: 4rem;
+    padding: 1rem;
+}
+
+h2, h3 {
+    padding: 1rem;
+}
+
+h3 {
+    margin-top: 1rem;
+}
+
+p {
+    padding: 1rem;
+}
+
+.citation {
+    margin-top: -1.75rem;
+}
+
+ol {
+    list-style-position: inside;
+    list-style-type: decimal;
+}
+
+.hide {
+    display: none;
+}   
+
+.container {
+    display: flex;
+    width: 100%;
+    gap: 5rem;
+}
+
+pre {
+    white-space: pre-wrap;
+    background-color: #E2E0DD;
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+}
+
+#navbar {
+    flex: 1 0 25%;
+    align-self: flex-start;
+    position: sticky;
+    top: 0;
+    background-color: #e95420;
+    border-radius: 0.5rem;
+    margin-left: 1rem;
+}
+
+#navbar > ol {
+    color: #fff;
+}
+
+#navbar > header {
+    font-size: 1.75rem;
+    text-align: center;
+    color: #fff;
+}
+
+.main {
+    font-size: 1.75rem;
+}
+
+ol {
+    font-size: 1.25rem;
+    padding: 1rem; 
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+}
+
+.fileCommands {
+    font-size: 1.75rem;
+}
+
+.fileCommandsInterior {
+    font-size: 1.75rem;
+    padding-left: 1.5rem;
+}
+
+table {
+    border: 0.1rem solid #E2E0DD;
+    border-collapse: collapse;
+    margin: 1rem;
+}
+
+tr, td {
+    border: 0.1rem solid #E2E0DD;
+    padding: 1rem;
+}
+
+tr:hover,
+td:hover {
+    background-color: #E2E0DD;
+    border: 0.1rem solid #D6D3CF;
+}
+
+footer {
+    text-align: end;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 0.4rem;
+    font-size: 1.25rem;
+    background-color: #E2E0DD;
+}
+
+@media only screen and (max-width: 360px) {
+    h1, h2, h3, p, ol {
+        font-size: 1rem;
+    }
+    #navbar > header {
+        font-size: 1rem;
+    }
+    .nav-link {
+        font-size: 1rem;
+    }
+    .container {
+        gap: 0.5rem;
+    }
+    pre {
+        font-size: 1rem;
+    }
+    .fileCommands, .fileCommandsInterior {
+        font-size: 1rem;
+    }
+    table {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    h1, h2, h3, p, ol {
+        font-size: 1rem;
+    }
+    #navbar > header {
+        font-size: 1rem;
+    }
+    .nav-link {
+        font-size: 1rem;
+    }
+    .container {
+        gap: 0.5rem;
+    }
+    pre {
+        font-size: 1rem;
+    }
+    .fileCommands, .fileCommandsInterior {
+        font-size: 1rem;
+    }
+    table {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    h1, h2, h3, p, ol {
+        font-size: 1rem;
+    }
+    #navbar > header {
+        font-size: 1rem;
+    }
+    .nav-link {
+        font-size: 1rem;
+    }
+    .container {
+        gap: 0.5rem;
+    }
+    pre {
+        font-size: 1rem;
+    }
+    .fileCommands, .fileCommandsInterior {
+        font-size: 1rem;
+    }
+    table {
+        font-size: 1rem;
+    }
+}
